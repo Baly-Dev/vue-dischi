@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <AppHeader />
-    <AppMain />
+    <AppHeader :genres="genres" @emitGenre="getGenre" />
+    <AppMain @emitSongs="getGenres" :genre="genre"/>
   </div>
 </template>
 
@@ -11,10 +11,25 @@ import AppMain from './components/AppMain.vue';
 
 export default {
   name: 'App',
+  data(){
+    return{
+      genres: [],
+      genre: null
+    }
+  },
   components: {
     AppHeader,
     AppMain
-}
+  },
+  methods:{
+    getGenres: function(genres){
+      this.genres = genres
+    },
+    getGenre: function(genre){
+      this.genre = genre
+      console.log(this.genre)
+    }
+  }
 }
 </script>
 
