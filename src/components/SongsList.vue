@@ -21,11 +21,11 @@ export default {
 .card-group{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
 
     .card{
         width: calc((100% / 5) - 15px);
         margin-bottom: 15px;
+        margin-right: 10px;
     }
 }
 </style>
